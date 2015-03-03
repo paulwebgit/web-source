@@ -1,0 +1,757 @@
+/*
+Setting the viewport
+In order to accommodate for sites not optimized for mobile screens,
+many modern mobile browsers set a larger browser viewport,
+which allows for better viewing of non-mobile-optimized sites.
+Users can then pinch-to-zoom in on the content they want.
+That's fine for non-mobile experiences, but because we're optimizing our experience for mobile browsers,
+we'll use the viewport meta tag to set the screen width to the device width:
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+It's important to note that we're not disabling the user's ability to zoom the page
+(which you could do by adding user-scalable=no to the content attribute),
+even though we're optimizing the content for small screens.
+It's recommended to keep user zooming enabled to keep things as accessible as possible.
+However, there are use cases to disable user-zooming, such as if you're including fixed positioned elements.
+*/
+
+<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>   
+
+<style>
+.body-wrapper {
+	width: 100%!important;
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0)!important;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* -moz-box-sizing is used by Mozilla browsers to alter the default CSS box model used to calculate widths and heights of elements.*/
+#content, .no-sidebars #content {
+	margin: 0!important;
+	width: 100%!important;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}			
+
+/*
+-webkit-box-sizing Chrome or Safari
+-moz-box-sizing Mozilla
+box-sizing	IE, Opera
+
+The box-sizing property is used to tell the browser what the sizing properties (width and height) should include.
+
+content-box
+Default. The width and height properties (and min/max properties) includes only the content. Border, padding, or margin are not included
+
+border-box
+The width and height properties (and min/max properties) includes content, padding and border, but not the margin
+
+initial
+Sets this property to its default value.
+
+inherit
+Inherits this property from its parent element.
+*/
+
+.mobile-contents-wrapper{
+	margin: auto;
+	width: 1003px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.mobile-contents-wrapper .phone-header {
+	height: 53px!important;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.edit-actions {
+	text-align: center!important;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#body-content{
+	width:100%!important;
+}
+
+.mobile-contents {
+	padding: 0 15px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+	
+.mobile-contents-wrapper * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+			
+#header,#footer{
+	display:none;
+}
+
+/* The @media rule is used to define different style rules for different media types/devices.
+	Media queries look at the capability of the device, and can be used to check many things, such as:
+
+	width and height of the browser window
+	width and height of the device
+	orientation (is the tablet/phone in landscape or portrait mode?)
+	resolution
+	and much more
+*/
+
+@media all and (min-width: 1310px) {
+	.mobile-contents-wrapper{
+		width:1003px;
+		margin:auto;
+	}
+}
+
+@media all and (max-width: 1310px) {
+	.mobile-contents-wrapper{
+		width: 100%;
+		padding: 0;
+	}
+}
+
+
+/* :::::::::: mobile content CSS :::::::::::::::::::::::::::::::::*/ 
+	
+.mobile-contents-wrapper .mobile-contents span.join{	
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 22px;
+	line-height: 24px;
+	font-weight: bolder;
+	color: #fff;
+	padding: 9px 0 9px 20px;
+	margin: 25px 0;
+	text-shadow: 1px 1px 1px #57778e;
+	height: auto;
+	border-bottom: 0px;
+	display: block;
+	background-color: #94aec1!important;
+	-webkit-border-radius: 16px; /* Safari/Chrome, other WebKit */
+	-moz-border-radius: 16px;    /* Firefox, other Gecko */
+	border-radius: 16px;        /* Opera/IE 8+ */		
+}
+	
+.mobile-contents-wrapper .break10-hide{
+	display:hide;
+}
+		
+.mobile-contents-wrapper span.headertxt{
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: bolder;
+	color: #94aec1;
+	margin: 16px 0px;
+	height: auto;
+	display: block;
+	border-bottom: 0px;
+}
+
+.mobile-contents-wrapper .mobile-contents h2{
+	width:100%;
+	height:auto!important;
+}
+	
+.mobile-contents-wrapper .mobile-contents-wrapper .break25click{
+	margin: 19px 0!important;
+	display: block;
+}
+
+.mobile-contents-wrapper .mobile-contents h2.findmore {
+	width: 88%;
+	margin: auto;
+	height: auto!important;
+}
+
+@media all and (max-width: 979px) {
+	.mobile-contents-wrapper .row-contents-how .first, 
+	.mobile-contents-wrapper .row-contents-how .second, 
+	.mobile-contents-wrapper .row-contents-how .third {
+		margin: 12px 10px!important;
+	}
+}
+
+@media all and (max-width: 420px) {
+	.mobile-contents-wrapper .row-contents-how ,
+	.mobile-contents-wrapper .row-contents-howtop{
+		padding: 0!important;
+		background: none!important;
+	}
+	.mobile-contents-wrapper .row-header p {
+		line-height: 26px;
+	}
+}
+
+@media all and (max-width: 460px) {
+	.mobile-contents-wrapper .webform-client-form,
+	.mobile-contents-wrapper .mobile-contents h2.findmore {
+		width: 100%!important;
+	}	
+	.mobile-contents-wrapper .webform-client-form{
+		padding:0!important;
+	}
+}
+
+.mobile-contents-wrapper .row-contents-how{
+	width: 100%;
+	text-align: center;
+	padding: 24px 0;
+	font-weight: bold;
+}
+
+.mobile-contents-wrapper .row-contents-how .first,
+.mobile-contents-wrapper .row-contents-how .second,
+.mobile-contents-wrapper .row-contents-how .third
+{
+	width: 268px;
+	padding: 16px;
+	border: 1px solid white;
+	height: 129px;
+	display: inline-block;
+	text-align: left;
+	background-color: white;
+	margin: 0 10px;
+	box-shadow: 1px 0px 6px #7391a6;
+	border-radius: 9px;
+}
+
+.mobile-contents-wrapper .row-contents-how .left,
+.mobile-contents-wrapper .row-contents-how .right
+{
+	
+}
+
+.mobile-contents-wrapper .row-contents-how h3{
+	margin-bottom: 9px;
+	padding: 0;
+	vertical-align: bottom;
+	color: #;
+	display: table-cell;
+	line-height: 17px;
+	font-size: 16px!important;
+}
+
+.mobile-contents-wrapper .row-contents-how .left{
+	float: left;
+	width: 101px;;
+}
+
+.mobile-contents-wrapper .row-contents-how  .first .left{
+	float: left;
+	width: 101px;
+}
+
+.mobile-contents-wrapper .row-contents-how .right{
+	float: right;
+	font-size: 13px;
+	width: 124px;
+	font-weight: bold;
+}
+
+.mobile-contents-wrapper .webform-client-form{
+	width: 88%;
+	margin: auto!important;
+}
+
+.mobile-contents-wrapper .webform-client-form label ,
+.mobile-contents-wrapper .webform-client-form input{
+	width:100%!important;
+}
+	
+.mobile-contents-wrapper .webform-client-form input{
+	height: 35px!important;
+}	
+	
+.mobile-contents-wrapper .webform-client-form label {
+	height: auto!important;
+	border-radius: 1px;
+	margin: 6px 0!important;
+}	
+	
+.mobile-contents-wrapper #block-webform-client-block-212{
+	width:100%;
+}
+
+.mobile-contents-wrapper .webform-client-form #edit-submit{
+	width: 300px!important;
+	height: 55px!important;
+	background-position: 0 0 !important;
+}
+		
+.mobile-contents-wrapper #webform-client-form-212 .form-submit{
+	margin-left: -8px!important;
+}
+	
+	
+.mobile-contents-wrapper .form-wrapper{
+	text-align: center;
+}	
+	
+	
+/*:::::::::: end mobile content :::::::::::::::::::::::::::::::::*/ 
+</style>
+
+<script type="text/javascript">
+function isIE() {
+	var myNav = navigator.userAgent.toLowerCase();
+	var isMsie = (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+	var isAndroid = myNav.indexOf("android") > -1;
+	var isMobile = (/iphone|ipod|android|blackberry|opera|mini|windows\sce|palm|smartphone|iemobile/i.test(navigator.userAgent.toLowerCase()));
+	var isTablet = (/ipad|android|android 3.0|xoom|sch-i800|playbook|tablet|kindle/i.test(navigator.userAgent.toLowerCase()));
+	if (isMobile) return true; else return false;
+}
+
+function getQueryVariable(variable)
+{
+	var query = window.location.search.substring(1);
+	var vars = query.split("&");
+	for (var i=0;i<vars.length;i++) {
+	   var pair = vars[i].split("=");
+	   if(pair[0] == variable){return pair[1];}
+	}
+	return(false);
+}
+
+if ( isIE()  && getQueryVariable("St") == false  ) {  
+
+	if ( getQueryVariable("fr") == false ){  //check for mobile
+		window.location = 'https://www.example.com.au/mobile';	
+	}else if ( getQueryVariable("fr") ) {  //check for mobile   
+		window.location = 'https://www.example.com.au/home';
+	}
+}	
+</script>
+
+
+<div class="mobile-contents-wrapper">
+</div>
+
+/*
+The tel:  mobile phone calls, desktop: VoIP applications 
+We're including in our footer is a clickable link to the customer service number.
+This is accomplished by using the tel URI scheme, which looks like this:
+<a href="tel:+18005550199">1-800-555-0199</a>
+*/
+
+/*
+Separate style sheet for larger screens
+We're creating two separate CSS files,
+style.css and enhanced.css in order to deliver basic styles for screens less than 40.5em
+and using media queries to serve up enhanced styles for screens larger than 40.5em.
+
+<link rel="stylesheet" type="text/css" href="style.css" media="screen, handheld" />
+<link rel="stylesheet" type="text/css" href="enhanced.css" media="screen  and (min-width: 40.5em)" />
+<!--[if (lt IE 9)&(!IEMobile)]>
+<link rel="stylesheet" type="text/css" href="enhanced.css" />
+<![endif]-->
+
+We're using the conditional code <!--[if (lt IE 9)&(!IEMobile)]><![endif]-->
+in order to serve up enhanced.css to non-mobile versions of IE less than version 9,
+which unfortunately don't support media queries.
+While this method does indeed add an HTTP request to the mix,
+it gives us greater flexibility over our styles.
+Alternately, we could use respond.js to deliver enhanced styles to IE.
+We're using the em unit instead of px to maintain consistency with the rest of our relative units
+and account for user settings like zoom level.
+Also, the content should determine the breakpoint (we're using 40.5em as a breakpoint)
+because device dimensions are too varied and are always changing so are therefore unreliable.
+*/
+
+/*
+Mobile-First Styles
+Starting with baseline shared styles and introducing more advanced layout rules
+when screen size permits keeps code simpler, smaller and more maintainable.
+
+/*Large screen styles first - Avoid*/
+.product-img {
+  width: 50%;
+  float: left;
+}
+
+@media screen and (max-width: 40.5em) {
+  .product-img {
+    width: auto;
+    float: none;
+  }
+}
+
+We want to avoid complexity as much as we can, so here's what a mobile-first approach looks like:
+@media screen and (min-width: 40.5em) {
+  .product-img {
+    width: 50%;
+    float: left;
+  }
+}
+
+Instead of declaring large screen rules first only to override them for smaller screens,
+we'll simply define rules as more real estate becomes available.
+The web by default is a fluid thing so we'll do our best to work with it instead of against it.
+It's important to note that some mobile browsers 
+(Symbian browsers, Blackberry lower than OS 6.0, Netfront, WP7 pre-Mango, etc) don't support media queries,
+so serving base styles by default reaches more devices and browsers.
+
+Applying Media Queries
+We're continuing our mobile-first style when we apply our media queries.
+Our related product list starts off two to a row,
+but increases to 3 in a row when the screen size is at least 28.75em wide (roughly the size of mobile phones in landscape mode)
+and then to 6 to a row when the screen size is at least 40.5em (roughly tablets in portrait mode or small desktop screens).
+
+/*Default styles*/
+.related-products li {
+  float: left;
+  width: 50%;
+}
+
+/*Display 3 per row for medium displays (like mobile phones in landscape or smaller tablets)*/
+@media screen and (min-width: 28.75em) {
+  .related-products li {
+    width: 33.3333333%;
+  }
+}
+/*Display 6 to a row for large displays (like medium tablets and up) */
+@media screen and min-width: 40.5em) {
+  .related-products li {
+    width: 16.6666667%;
+  }
+}
+
+Assuming small screen by default allows us to support more platforms
+and also makes it easy add more breakpoints without having to modify existing styles.
+Defining styles as they're needed also keeps file size down, reduces complexity and keeps code more maintainable.
+
+Using Relative Units
+We're using percentages and em units in our design in order to keep things as flexible as possible.
+Relative units are far more compatible with the tremendous variance brought on by screen size, pixel density and zoom level.
+While media queries are responsive web design's secret sauce, we want our fluid grids to do most of the work.
+Maintaining a whole slew of set-width styles across many media queries can become unwieldy,
+so we'll make sure the stylesheet's foundation is entirely flexible.
+
+a formula for converting dimensions and font sizes from pixel-based to relative units:
+target ÷ context = result
+
+Using CSS to Reduce Requests
+Too many HTTP requests can be a huge killer for performance, especially on mobile.
+We're incorporating some CSS techniques to save HTTP requests which will improve the site's performance.
+Using CSS gradients instead of background images reduces the amount of image requests and gives us more control over the design.
+We're including the appropriate vendor prefixes to ensure maximum compatibility (there are tools for this)
+and hoping that one day that these rules will become standardized to save us some time.
+
+/*Using CSS gradients instead of background images*/
+header[role="banner"] {
+  position: relative;
+  background: #111; 
+  background: +linear-gradient (top, #111 0%, #222 100%);
+}
+We're also using data URIs instead of background images for some of the smaller icons (for icons like search, social features and location).
+While data URIs might look a bit ugly and can increase up the stylesheet file size,
+the reduction of requests results in a faster perceived download time.
+
+/*Using a Data URI for Background Image
+data:[<mediatype>][;base64],<data>
+*/
+
+.find-nearby {
+  background: url(data:image/png;base64,
+  ..........
+  )  no-repeat 100% 43%;
+}
+
+Behavior
+Now that we have our structure and style in place,
+we'll add JavaScript enhancements to add functionality to the navigation, image gallery and auxiliary content.
+
+Navigation
+Navigation can be especially tricky for adaptive experiences.
+Top navigation is common for desktop sites, but top navigation can crowd the screen and push down the primary content on small screens.
+We want to highlight the product and not the site navigation, so we'll do our best to get the navigation out of the way.
+in our markup we've created a list called #nav-anchors,
+which will be used to toggle the visibility of the navigation and search bar for small screens.
+
+<ul  id="nav-anchors" class="nav-anchors">
+  <li><a href="#nav" id="menu-anchor">Menu</a></li>
+  <li><a href="#search" id="search-anchor">Search</a></li>
+</ul>
+
+<form id="search" action="#" method="post" class="search reveal">
+  <fieldset>
+    <legend>Search the Site</legend>
+    <input type="search" placeholder="Search Store" />
+    <input type="submit" value="Search" />
+  </fieldset>
+</form>
+
+<nav id="nav" class="nav reveal">
+  <ul role="navigation">
+    <li><a href="#">T-shirts</a></li>
+    <li><a href="#">Hoodies</a></li>
+    <li><a href="#">Pants</a></li>
+  </ul>
+</nav>
+
+We'll add a resize listener which will determine whether there's enough room to show the navigation and search bar.
+
+$(w).resize(function(){ //Update dimensions on resize
+  sw = document.documentElement.clientWidth;
+  sh = document.documentElement.clientHeight;
+  checkMobile();
+});
+  
+//Check if Mobile
+function checkMobile() {
+  mobile = (sw > breakpoint) ? false : true;
+
+  if (!mobile) { //If Not Mobile
+    $('[role="tabpanel"],#nav,#search').show(); //Show full navigation and search
+  } else { //Hide 
+    if(!$('#nav-anchors a').hasClass('active')) {
+      $('#nav,#search').hide(); //Hide full navigation and search
+    }
+  }
+}
+
+
+Image Gallery
+By default the image gallery is simply a large image with thumbnail images that click through to their larger counterparts.
+This means that they're accessible to browsers and devices with poor or no JavaScript support.
+
+<div id="product-img" class="product-img">
+  <figure class="img-container" id="img-container">
+    <img src="images/product_img_1.jpg" alt="Super Ffly T-shirt" />
+  </figure>
+  <nav>
+    <ul>
+      <li><a href="images/product_img_1.jpg"><img src="images/product_img_1_thumb.jpg" alt="Super Ffly Men's Shirt" /></a></li>
+      <li><a href="images/product_img_2.jpg"><img src="images/product_img_2_thumb.jpg" alt="Super Ffly Women's Shirt" /></a></li>
+      <li><a href="images/product_img_3.png"><img src="images/product_img_3_thumb.jpg" alt="Ffly Logo" /></a></li>
+    </ul>
+  </nav>
+</div>
+
+We'll build an image carousel from the available thumbnail images:
+
+function buildGallery() {
+  container.html('<div id="img-list"><ul /></div>');
+  imgList = $('#img-list');
+  nav.find('a:first').addClass('active');
+  
+  //For Each Navigation Link
+  nav.find('a').each(function() {
+    var $this = $(this);
+    var href = $this.attr('href');
+      
+    //Prepare list item with image source in data attribute
+    arr += '<li data-imgsrc="'+href+'"></li>';
+  });
+  
+  //Append to #img-list
+  imgList.find('ul').append(arr);
+      
+  //Nav Thumbnail Click
+  nav.on('click', 'a', function(e) {
+    var pos = $(this).parent().index();
+    e.preventDefault();
+    loadImg(pos);
+    if(swipeEnabled) {
+      mySwipe.slide(index, 300);
+    }
+    updateNav(pos);
+  });
+}
+
+To enhance the experience further, we're using Modernizr to detect for the presence of touch events and CSS transitions,
+and if they are supported, we'll load in a library called SwipeJS to make a touch-friendly image carousel.
+/* Modernizr is a JavaScript library that detects HTML5 and CSS3 features in the user’s browser.*/
+Modernizr makes it easy for you to write conditional JavaScript and CSS to handle each situation,
+whether a browser supports a feature or not. Modernizr runs quickly on page load to detect features;
+it then creates a JavaScript object with the results, and adds classes to the html element for you to key your CSS on.
+Modernizr supports dozens of tests, and optionally includes YepNope.js for conditional loading of external .js and .css resources.
+
+Modernizr.load({
+// The Modernizr.touch test only indicates if the browser supports touch events, which does not necessarily reflect a touchscreen device. 
+// Transitions can typically be used without using Modernizr's specific CSS class or JavaScript property,
+// but for those occasions you want parts of your site to look and/or behave differently they are available.
+// A good example use case is to build Modernizr into an animation engine, which uses native CSS Transitions in the browsers that have it,
+// and relies on JavaScript for the animation in browsers that don’t.
+// nope: both: load:
+
+  test: Modernizr.touch && Modernizr.csstransitions,
+  yep: 'js/swipe.js',
+  complete: function() {
+    if (Modernizr.touch && Modernizr.csstransitions) {
+      swipeEnabled = true;
+      buildSwipe();
+    }
+  }
+});
+
+//Build Swipe Carousel
+function buildSwipe() {
+  //Initialize Swipe.js
+  w.mySwipe = new Swipe(document.getElementById('img-list'), {
+    callback: function(event, index, elem) {
+      updateNav(index);
+      loadImg(index + 1);
+    } 
+  });
+}
+
+We now have an accessible image gallery with added enhancements for touch-enabled devices.
+
+Related Content
+In order to keep Initial page size down, we're not loading auxiliary content,
+namely the related t-shirts and product reviews, by default.
+Instead, they exist as their own HTML pages, which are accessed by links as a default behavior.
+
+<section class="aux related-products" id="related-products">
+  <header id="tab-related">
+    <a href="related.html">
+      <h2>Similar T-shirts</h2>
+    </a>
+  </header>
+</section>
+<section class="aux reviews" id="reviews">
+  <header id="tab-reviews">
+    <a href="reviews.html">
+      <h2>8 Reviews</h2>
+      <ol class="star">
+        <li class="on">&#9733;</li>
+        <li class="on">&#9733;</li>
+        <li class="on">&#9733;</li>
+        <li class="on">&#9733;</li>
+        <li>&#9734;</li>
+      </ol>
+    </a>
+  </header>
+</section>
+
+We'll pull in the related content when one of two conditions are met:
+When a small-screen user clicks the related shirts
+or product reviews links When the screen has enough room to load in the auxiliary content.
+
+//Check if Mobile
+function checkMobile() {
+  if(sw > breakpoint) {
+    mobile = false; //Not Mobile
+  } else {
+    mobile = true; //Mobile
+  }
+  
+  if (!mobile) { //If Not Mobile
+    loadAux(); //Load auxiliary content
+  }
+}
+
+//Set up Auxiliary content
+function loadAux() {
+  var $aux = $('.aux');
+  $aux.each(function(index) {
+    var $this = $(this);
+    var auxLink = $this.find('a');
+    var auxFragment = auxLink.attr('href');
+    var auxContent = $this.find('[role=tabpanel]');
+    if (auxContent.size()===0 && $this.hasClass('loaded')===false) {
+      loadContent(auxFragment,$this);
+    }
+  });
+}
+
+function loadContent(src,container) { // Load Tab Content
+  container.addClass('loaded');
+  $('<div role="tabpanel" />').load(src +' #content > div',function() {
+    $(this).appendTo(container);
+  });
+}
+
+note: we're using screen size to determine when to load in content, but this is in no way perfect.
+Keep an eye out for navigator.connection for a better way to determine whether it's worth introducing extra content.
+
+	// Get the connection type.
+	var type = navigator.connection.type;
+
+	// The maximum downlink speed of the connection
+	var max = navigator.connection.downlinkMax;
+
+	function changeHandler(e) {
+	// Handle change to connection here.
+	}
+
+	// Register for event changes.
+	navigator.connection.onchange = changeHandler;
+
+	// Alternatively.
+	navigator.connection.addEventListener('change', changeHandler);
+
+Geolocation
+Leveraging user location to deliver enhanced experiences is an important aspect of mobile development.
+Thankfully geolocation is one of the best supported Features across mobile browsers (as well as most desktop browsers).
+The fallback functionality could be a simple form where the user simply inputs their ZIP code to find store near them.
+Geolocation is the identification of the real-world geographic location of an object, such as a radar source, mobile phone 
+or Internet-connected computer terminal.
+Geolocation may refer to the practice of assessing the location, or to the actual assessed location.
+<script>
+var x = document.getElementById("demo");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude; 
+}
+</script>
+
+Adaptive Images
+Our demo isn't incorporating many large images,
+but it's best practice to load in mobile optimized images by default then conditionally load in larger images only when needed.
+There are lots of different techniques for responsive images, both client-side and server side.
+We've done a lot so far to be mindful of performance, and optimizing images is an easy way to optimize performance even further.
+
+Less JS
+Keeping pages as lightweight as possible is important for performance,
+so we should look to optimize scripts as much as possible.
+We're using the jQuery library for our demo, but we're definitely not using all of it.
+We could look into using Closure Compiler to strip out unused bits of the library to keep things as lightweight as possible
+while still taking advantage of what jQuery offers.
+Alternately, we could look into micro-frameworks like Zepto.js and others,
+but they typically don't necessarily offer the best cross-browser support.
+Writing vanilla Javascript could avoid additional heft but can be more difficult to author and harder to maintain.
+Ultimately, each approach has its pros and cons, just be sure to consider the tradeoffs when making these decisions.
+
+Offline Access
+It's increasingly important to make sure web experiences are accessible offline,
+especially when considering mobile users with variable connectivity.
+Thankfully, appcache and other offline techniques gives us a way to keep our resources accessible even when the user is offline.
+
+Wrapping Up
+We've created an experience that is mindful to user context and adapts both layout and functionality based the browser
+and device's features. We've also set up a foundation that can adapt to future devices and browsers. Here's some key takeaways:
+
+Author semantic HTML5 markup as a foundation for adaptive experiences.
+Create mobile first CSS to keep things lightweight, simple and maintainable.
+Use relative units like ems and percentages to keep styles as fluid and flexible as possible.
+Let content determine the breakpoints for media queries.
+Exploit opportunities to reduce HTTP requests by conditionally-loading content and using HTML characters,
+CSS gradients, Data URIs and more
+Author unobtrusive javascript and use tools like Modernizr to detect features.
+Take advantage of mobile-centric features like touch events,
+telephone links and geolocation to deliver enhanced experiences to mobile users.
+Creating adaptive experiences allows your content to go more places,
+which means more opportunities to reach potential customers wherever they may be.
+By adhering to the principles of progressive enhancement and addressing constraints first,
+we're laying a future-friendly foundation that gives our site a better chance of working in future browsers and environments.
+*/
