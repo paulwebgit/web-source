@@ -327,9 +327,9 @@ function getQueryVariable(variable)
 if ( isIE()  && getQueryVariable("St") == false  ) {  
 
 	if ( getQueryVariable("fr") == false ){  //check for mobile
-		window.location = 'https://www.smile.com.au/ad/mobile';	
+		window.location = 'https://www.example.com.au/ad/mobile';	
 	}else if ( getQueryVariable("fr") ) {  //check for mobile   
-		window.location = 'https://www.smile.com.au/ad/home';
+		window.location = 'https://www.example.com.au/ad/home';
 	}
 }	
 </script>
@@ -439,7 +439,7 @@ Maintaining a whole slew of set-width styles across many media queries can becom
 so we'll make sure the stylesheet's foundation is entirely flexible.
 
 a formula for converting dimensions and font sizes from pixel-based to relative units:
-target ÷ context = result
+target Ã· context = result
 
 Using CSS to Reduce Requests
 Too many HTTP requests can be a huge killer for performance, especially on mobile.
@@ -572,7 +572,7 @@ function buildGallery() {
 
 To enhance the experience further, we're using Modernizr to detect for the presence of touch events and CSS transitions,
 and if they are supported, we'll load in a library called SwipeJS to make a touch-friendly image carousel.
-/* Modernizr is a JavaScript library that detects HTML5 and CSS3 features in the user’s browser.*/
+/* Modernizr is a JavaScript library that detects HTML5 and CSS3 features in the userÂ’s browser.*/
 Modernizr makes it easy for you to write conditional JavaScript and CSS to handle each situation,
 whether a browser supports a feature or not. Modernizr runs quickly on page load to detect features;
 it then creates a JavaScript object with the results, and adds classes to the html element for you to key your CSS on.
@@ -583,7 +583,7 @@ Modernizr.load({
 // Transitions can typically be used without using Modernizr's specific CSS class or JavaScript property,
 // but for those occasions you want parts of your site to look and/or behave differently they are available.
 // A good example use case is to build Modernizr into an animation engine, which uses native CSS Transitions in the browsers that have it,
-// and relies on JavaScript for the animation in browsers that don’t.
+// and relies on JavaScript for the animation in browsers that donÂ’t.
 // nope: both: load:
 
   test: Modernizr.touch && Modernizr.csstransitions,
